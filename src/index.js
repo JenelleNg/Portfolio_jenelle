@@ -1,100 +1,90 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 import "./index.css";
-
+import { pizzaData } from "./data.js";
 
 function Header() {
   return (
-    <header style={{color:"orange", fontSize:48, textTransform:"uppercase"}}>
+    <header style={{ color: "orange", fontSize: 48, textTransform: "uppercase" }}>
       <h1>Bananas Wi Pizza Co.</h1>
     </header>
   );
-};
+}
 
-function Pizza(pizza) {
+function Pizza({ name, ingredients, image, price, soldOut }) {
+  const [favourite, setFavourite] = React.useState(false);
+
   return (
-    <div>
-      <img src={pizza.image} alt={pizza.name} width="400" />
-      <h3>{pizza.name}</h3>
-      <p>{pizza.ingredients}</p>
-    </div>
+    <li className={`pizza ${soldOut ? "sold-out" : ""}`}>
+      <img src={image} alt={name} />
+      <h3>{name}</h3>
+      <p>{ingredients}</p>
+      <span className='board'>{soldOut ? "SOLD OUT" : `$${price}`}</span>
+
+      <button 
+        className={`btn-fav ${favourite ? 'active' : ''}`} 
+        onClick={() => setFavourite(!favourite)}>
+        {favourite ? "💖" : "♡"} Favourite
+      </button>
+    </li>
   );
 }
 
-function Menu() {
+function Menu(isOpen) {
+  const [search, setSearch] = React.useState('');
+
+  const filteredPizzas = pizzaData.filter(pizza =>
+    pizza.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="menu">
       <h2>Our Menu</h2>
-
-      <Pizza
-        name="Focaccia"
-        ingredients="bread with Italian olive oil and rosemary"
-        image="/pizzas/focaccia.jpg"
-      />
-
-      <Pizza
-        name="Margherita"
-        ingredients="tomatoes, mozzarella cheese, basil, and olive oil"
-        image="/pizzas/margherita.jpg"
-      />
+      {isOpen && <p style={{ fontSize: 24 }}>Authentic Italian Cuisine</p>}
+      <input
+         type="text"
+         placeholder="Search pizza..."
+         value={search}
+         onChange={(e) => setSearch(e.target.value)}
+         style={{ padding: '0.8rem', fontSize: '1.4rem', marginBottom: '2rem' }}
+       />
+        {filteredPizzas.map((pizza) => (
+          <Pizza 
+             key={pizza.name} 
+             name={pizza.name}
+             ingredients={pizza.ingredients}
+             image={pizza.photoName}
+             price={pizza.price}
+             soldOut={pizza.soldOut} />
+        ))}
     </div>
   );
 }
 
-function Footer() {
-  const hour = new Date().getHours();
-  const open = hour >= 10 && hour < 22;
-
+function Footer({ isOpen }) {
   return (
-    <footer className="footer">
-      {open ? "We’re currently open" : "Sorry we’re closed"}
+    <footer style={{ marginTop: 20 }}>
+      {isOpen ? (
+        <div className="footer">
+          <p>We're currently open</p><br></br>
+          <button className="btn">Order</button>
+        </div>
+      ) : (
+        <p>Sorry, we're closed</p>
+      )}
     </footer>
   );
 }
 
 function App() {
+  const hour = new Date().getHours();
+  const isOpen = hour >= 10 && hour < 22;
+
   return (
     <div className="container">
-      <Header />
-      <Menu/>
-
-      {/* <Pizza
-        name="Focaccia"
-        ingredients="Bread with Italian olive oil and rosemary"
-        image="/pizzas/focaccia.jpg"
-      />
-
-      <Pizza
-        name="Margherita"
-        ingredients="tomatoes, mozzarella cheese, basil, and olive oil"
-        image="/pizzas/margherita.jpg"
-      />*/}
-
-      <Pizza
-        name="Funghi"
-        ingredients="tomato, mozzarella, mushrooms, and basil"
-        image="/pizzas/funghi.jpg"
-      />
-
-      <Pizza
-        name="prosciutto"
-        ingredients="tomato, mozzarella cheese, prosciutto, arugula and balsamic glaze"
-        image="/pizzas/prosciutto.jpg"
-      />
-
-      <Pizza
-        name="Salamino"
-        ingredients="tomato, mozzarella, and pepperoni"
-        image="/pizzas/salamino.jpg"
-      />
-
-      <Pizza
-        name="Spinaci"
-        ingredients="spinach, and various cheeses like mozzarella, Parmesan, or ricotta"
-        image="/pizzas/spinaci.jpg"
-      />
-
-      <Footer/>
+      <Header isOpen={isOpen} />
+      <Menu />
+      <Footer isOpen={isOpen} />
     </div>
   );
 }
