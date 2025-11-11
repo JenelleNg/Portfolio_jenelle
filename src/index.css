@@ -101,7 +101,7 @@ body {
 .pizzas {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   gap: 3rem;
 }
 
@@ -114,9 +114,9 @@ body {
 }
 
 .pizza img {
-  width: 12rem;     
-  height: 12rem;    
-  object-fit: cover;  
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
   border-radius: 1rem;
 }
 
@@ -183,7 +183,9 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
   background-color: #edc84b;
-  padding: 1.4rem 3.2rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -196,18 +198,36 @@ body {
 }
 
 .btn-fav {
-  margin-top: 0.5rem;
   background: none;
   border: 1px solid #ff6f61;
   color: #ff6f61;
   border-radius: 5px;
   cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  transition: background-color 0.2s;
 }
+
 .btn-fav.active {
   background-color: #ff6f61;
   color: #fff;
 }
 
+.pizza-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+  height: 100%;
+  width: 100%;
+}
+
+.pizza-bottom {
+  margin-top: auto; /* pushes to bottom of card */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
 
 /*
 SPACING SYSTEM (px)

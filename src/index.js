@@ -19,6 +19,7 @@ function Pizza({ name, ingredients, image, price, soldOut }) {
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>{ingredients}</p>
+      <div className="pizza-bottom"></div>
       <span className='board'>{soldOut ? "SOLD OUT" : `$${price}`}</span>
 
       <button 
