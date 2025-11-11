@@ -222,7 +222,7 @@ body {
 }
 
 .pizza-bottom {
-  margin-top: auto; /* pushes to bottom of card */
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
