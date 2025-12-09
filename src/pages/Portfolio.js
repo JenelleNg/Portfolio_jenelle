@@ -6,9 +6,9 @@ export default function PortfolioFull() {
     const projects = [
         {
             id: "gpa",
-            title: "GPA Tracker System",
+            title: "GPA Tracker",
             description: "Built with Python, HTML, and JavaScript. Includes module editing, GPA calculations, and dynamic form updates.",
-            image: "/images/gpatracker.png",
+            image: "/images/GPATracker.png",
             used: "Python, HTML, JavaScript",
         },
         {
