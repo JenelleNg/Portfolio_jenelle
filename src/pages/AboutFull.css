@@ -1,0 +1,218 @@
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+    text-align: left;
+}
+
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 10px 20px;
+}
+
+.about-text {
+    border-left: 2px solid #1B4965;
+    color: #1B4965;
+    padding-left: 50px;
+    max-width: 600px;
+}
+
+.card {
+    background: white;
+    padding: 20px 40px;
+    margin: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #1B4965;
+}
+
+.card h1:first-child,
+.card h2:first-child {
+    margin-top: 0;
+}
+
+.section-title {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.journey {
+    text-align: left;
+}
+
+.skills {
+    text-align: left;
+}
+
+.skills-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.goals {
+    text-align: left;
+}
+
+.certificates {
+    text-align: left;
+    position: relative;
+}
+
+.cert-category {
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #d0eaf7;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-btn.active {
+    background: #3294d1;
+    color: white;
+}
+
+.carousels-container {
+    display: none !important;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.carousels-container.active {
+    display: flex !important;
+}
+
+.carousels {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 0;
+    flex: 1;
+}
+
+.carousels::-webkit-scrollbar {
+    display: none;
+}
+
+.cert {
+    width: 200px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cert:hover {
+    transform: scale(1.05);
+}
+
+.arrow {
+    border: none;
+    padding: 10px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.arrow.left {
+    margin-right: 10px;
+}
+
+.arrow.right {
+    margin-left: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 60%;
+    border-radius: 10px;
+}
+
+#closeModal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-text {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .carousels {
+        gap: 10px;
+    }
+
+    .cert {
+        width: 140px;
+    }
+}
