@@ -1,9 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 
 export default function Navbar() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]); 
+
     return (
         <nav className="navbar">
             <img src="/images/logo.png" alt="Logo" className="logo" />

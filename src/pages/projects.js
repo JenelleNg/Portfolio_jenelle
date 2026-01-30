@@ -65,4 +65,21 @@ export const projects = [
             "/images/sstotal.png",
         ]
     },
+    { 
+        id: "calm", 
+        title: "CALM Website Design", 
+        category: "design", 
+        description: "Design of a shopping website, through Figma, that sells sustainable clothes.", 
+        used: "Figma",
+        link: "https://www.figma.com/proto/ZOgObL1vQ3OowBT6fCw0km/Jenelle-24013515-C-LM-wireframe?node-id=1-2&p=f&t=GVNRv8Cs14mo9XeJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+        linkLabel: "View Figma Design Prototype",
+        images: ["/images/CALMhome.png", 
+            "/images/CALMcollections.png",
+            "/images/CALMwomen.png",
+            "/images/CALMcategory.png",
+            "/images/CALMfavourite.png",
+            "/images/CALMCART.png",
+            "/images/CALMcomponent.png",
+        ]
+    },
 ];

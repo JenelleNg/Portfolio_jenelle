@@ -67,3 +67,8 @@
         height: 22px;
     }
 }
+
+.section {
+    padding-top: 100px; /* navbar height + some spacing */
+}
+
