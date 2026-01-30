@@ -8,7 +8,7 @@ export default function Home() {
 
             <div
                 className="cloud-bg"
-                style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/images/banner.png'})` }}
+                style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/images/backgroundimg.png'})` }}
             >
                 <h1>Jenelle’s<br/>Developer & Designer<br/>Portfolio</h1>
             </div>
