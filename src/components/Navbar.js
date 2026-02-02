@@ -13,7 +13,7 @@ export default function Navbar() {
 
     return (
         <nav className="navbar">
-            <img src="/images/logo.png" alt="Logo" className="logo" />
+            <div className="logo" />
             <div className="nav-links">
                 <Link to="/">
                     <img src="/images/home-icon.png" alt="Home" className="nav-icon" />
