@@ -24,9 +24,7 @@ export const projects = [
             "/images/erpuzzle2.png",
             "/images/erpuzzle4.png"
         ],
-        videos: [
-            "/videos/VREscape.mp4"
-        ]
+        vimeoId: "1160968231"
     },
     { 
         id: "vr-bscard", 

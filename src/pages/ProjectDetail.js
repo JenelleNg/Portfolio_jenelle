@@ -67,17 +67,21 @@ export default function ProjectDetail() {
         <div className="section">
             <div className="portfolio-page" style={{ padding: "20px" }}>
                 <h1>{project.title}</h1>
-                {project.videos && project.videos.length > 0 && (
+
+                {project.vimeoId && (
                     <div className="video-wrapper">
-                        <video
-                            src={project.videos[0]}
-                            controls
-                            playsInline
-                            preload="metadata"
-                            className="project-video"
-                        />
+                        <iframe
+                            src={`https://player.vimeo.com/video/${project.vimeoId}`}
+                            width="100%"
+                            height="480"
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowFullScreen
+                            title={project.title}
+                        ></iframe>
                     </div>
                 )}
+
                 <div className="carousel-container">
                     <button className="arrow left" onClick={() => scrollCarousel("left")}>
                         &#10094;
@@ -94,13 +98,16 @@ export default function ProjectDetail() {
                             />
                         ))}
                     </div>
+
                     <button className="arrow right" onClick={() => scrollCarousel("right")}>
                         &#10095;
                     </button>
                 </div>
+
                 <div className="card">
                     <p><strong>Description:</strong> {project.description}</p>
                     <p><strong>Technologies used:</strong> {project.used}</p>
+
                     {project.link && (
                         <a
                             href={project.link}
@@ -112,6 +119,7 @@ export default function ProjectDetail() {
                         </a>
                     )}
                 </div>
+
                 <Link className="btn" to="/portfolio">
                     Back to Portfolio
                 </Link>
