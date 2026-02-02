@@ -14,7 +14,6 @@ export default function ProjectDetail() {
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (!modalRef.current || modalRef.current.style.display !== "flex") return;
-            if (!project) return;
 
             if (e.key === "ArrowRight") {
                 const nextIndex = (currentIndex + 1) % project.images.length;
@@ -38,7 +37,6 @@ export default function ProjectDetail() {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [currentIndex, project]);
 
-    // ✅ Early return AFTER hooks
     if (!project) {
         return (
             <div style={{ padding: "20px" }}>
@@ -62,17 +60,28 @@ export default function ProjectDetail() {
 
     const scrollCarousel = (direction) => {
         const carousel = document.getElementById("project-carousel");
-        const distance = direction === "left" ? -300 : 300;
-        carousel.scrollLeft += distance;
+        carousel.scrollLeft += direction === "left" ? -300 : 300;
     };
 
     return (
         <div className="section">
             <div className="portfolio-page" style={{ padding: "20px" }}>
                 <h1>{project.title}</h1>
-
+                {project.videos && project.videos.length > 0 && (
+                    <div className="video-wrapper">
+                        <video
+                            src={project.videos[0]}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="project-video"
+                        />
+                    </div>
+                )}
                 <div className="carousel-container">
-                    <button className="arrow left" onClick={() => scrollCarousel("left")}>&#10094;</button>
+                    <button className="arrow left" onClick={() => scrollCarousel("left")}>
+                        &#10094;
+                    </button>
 
                     <div className="carousel" id="project-carousel">
                         {project.images.map((img, index) => (
@@ -85,15 +94,13 @@ export default function ProjectDetail() {
                             />
                         ))}
                     </div>
-
-                    <button className="arrow right" onClick={() => scrollCarousel("right")}>&#10095;</button>
+                    <button className="arrow right" onClick={() => scrollCarousel("right")}>
+                        &#10095;
+                    </button>
                 </div>
-
                 <div className="card">
                     <p><strong>Description:</strong> {project.description}</p>
                     <p><strong>Technologies used:</strong> {project.used}</p>
-
-                    {/* Only show the link if project.link exists */}
                     {project.link && (
                         <a
                             href={project.link}
@@ -105,9 +112,10 @@ export default function ProjectDetail() {
                         </a>
                     )}
                 </div>
-                <Link className="btn" to="/portfolio">Back to Portfolio</Link>
+                <Link className="btn" to="/portfolio">
+                    Back to Portfolio
+                </Link>
             </div>
-
             <div
                 ref={modalRef}
                 className="modal"
