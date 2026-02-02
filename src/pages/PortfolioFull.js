@@ -4,7 +4,7 @@ import { projects } from "./projects";
 import "./PortfolioFull.css";
 
 export default function PortfolioFull() {
-    const categories = ["all", "vr", "coding", "design", "others"];
+    const categories = ["all", "vr", "web app", "mobile app", "design", "others"];
     const [activeCategory, setActiveCategory] = useState("all");
 
     const filteredProjects = activeCategory === "all"
