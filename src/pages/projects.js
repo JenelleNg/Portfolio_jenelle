@@ -83,4 +83,27 @@ export const projects = [
             "/images/CALMcomponent.png",
         ]
     },
+    { 
+        id: "pizza", 
+        title: "Pizza Design Website", 
+        category: "web app", 
+        description: "Designed a pizza app features such as a search bar to search for specific pizza and a favourite button beside the pizza. User can favourite any pizza they want. At the bottom It display either the shop is close or open.", 
+        used: "React, JavaScript, CSS",
+        images: [
+            "/images/Pizza app.png",
+            "/images/pizza app2.png",
+            "/images/pizzaappfull.png"
+        ]
+    },
+    { 
+        id: "travel list", 
+        title: "My Travel List", 
+        category: "web app", 
+        description: "Users can enter item and choose the number it wants to add. There is a filter feature where it filter alphabetically, quantity and input order. Users can tick on items they already have or delete them and it will show the percentage of things packed. The clear all is to delete all items instead of 1 by 1.", 
+        used: "React, JavaScript, CSS",
+        images: [
+            "/images/travellist1.png",
+            "/images/travellist2.png"
+        ]
+    },
 ];
