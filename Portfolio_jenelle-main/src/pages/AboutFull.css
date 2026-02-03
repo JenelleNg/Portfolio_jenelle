@@ -166,6 +166,35 @@ p {
     display: none;
 }
 
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255,255,255,0.8);
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.carousel-arrow.left {
+    left: 0;
+}
+
+.carousel-arrow.right {
+    right: 0;
+}
+
+.carousel-arrow:hover {
+    background: #3294d1;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+
 .cert {
     width: 200px;
     border-radius: 12px;
