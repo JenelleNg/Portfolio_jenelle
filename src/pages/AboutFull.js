@@ -1,8 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./AboutFull.css";
 
 export default function AboutFull() {
     const [activeCategory, setActiveCategory] = useState("frontend");
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentImages, setCurrentImages] = useState([]);
+
     const modalRef = useRef(null);
     const modalImgRef = useRef(null);
 
@@ -40,33 +43,58 @@ export default function AboutFull() {
         ]
     };
 
-    const openModal = (src) => {
+    const openModal = (images, index) => {
         modalRef.current.style.display = "flex";
-        modalImgRef.current.src = src;
+        setCurrentImages(images);
+        setCurrentIndex(index);
+        modalImgRef.current.src = images[index];
+        document.body.style.overflow = "hidden";
     };
 
     const closeModal = () => {
         modalRef.current.style.display = "none";
+        document.body.style.overflow = "auto";
     };
 
-    const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-    const scrollCarousel = (category, direction) => {
-    const carousel = document.getElementById(`carousel-${category}`);
-    const distance = direction === "left" ? -300 : 300;
-    const duration = 400;
-    const start = carousel.scrollLeft;
-    const startTime = performance.now();
-
-    const animate = (time) => {
-        const elapsed = time - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        carousel.scrollLeft = start + distance * easeInOutQuad(progress);
-        if (progress < 1) requestAnimationFrame(animate);
+    const showNext = () => {
+        const nextIndex = (currentIndex + 1) % currentImages.length;
+        setCurrentIndex(nextIndex);
+        modalImgRef.current.src = currentImages[nextIndex];
     };
 
-    requestAnimationFrame(animate);
-};
+    const showPrev = () => {
+        const prevIndex =
+            (currentIndex - 1 + currentImages.length) % currentImages.length;
+        setCurrentIndex(prevIndex);
+        modalImgRef.current.src = currentImages[prevIndex];
+    };
+
+    useEffect(() => {
+    const handleKeyDown = (e) => {
+        if (!modalRef.current) return;
+        if (modalRef.current.style.display !== "flex") return;
+
+        if (e.key === "ArrowRight") {
+            const nextIndex = (currentIndex + 1) % currentImages.length;
+            setCurrentIndex(nextIndex);
+            modalImgRef.current.src = currentImages[nextIndex];
+        }
+
+        if (e.key === "ArrowLeft") {
+            const prevIndex =
+                (currentIndex - 1 + currentImages.length) % currentImages.length;
+            setCurrentIndex(prevIndex);
+            modalImgRef.current.src = currentImages[prevIndex];
+        }
+
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+}, [currentIndex, currentImages]);
 
 
     return (
@@ -137,7 +165,7 @@ export default function AboutFull() {
 
             <div className="card goals">
                 <h1 className="section-title">Goals</h1>
-                <p>My goal is to have a life that I am grateful for. :D</p>
+                <p>To live my life</p>
             </div>
 
             <div className="card certificates">
@@ -160,34 +188,55 @@ export default function AboutFull() {
                         key={cat.id}
                         className={`carousels-container ${activeCategory === cat.id ? "active" : ""}`}
                     >
-                        <button className="arrow left" onClick={() => scrollCarousel(cat.id, "left")}>&#10094;</button>
                         <div className="carousels" id={`carousel-${cat.id}`}>
-                            {certs[cat.id].map(cert => (
+                            {certs[cat.id].map((cert, index) => (
                                 <img
                                     key={cert}
                                     src={`/images/certificates/${cert}`}
-                                    className="cert rotate"
+                                    className="cert"
                                     alt={cert}
-                                    onClick={() => openModal(`/images/certificates/${cert}`)}
+                                    onClick={() =>
+                                        openModal(
+                                            certs[cat.id].map(
+                                                c => `/images/certificates/${c}`
+                                            ),
+                                            index
+                                        )
+                                    }
                                 />
                             ))}
                         </div>
-                        <button className="arrow right" onClick={() => scrollCarousel(cat.id, "right")}>&#10095;</button>
                     </div>
                 ))}
             </div>
 
+            {/* Modal */}
             <div
                 ref={modalRef}
                 className="modal"
                 onClick={(e) => {
-                    if (e.target === modalRef.current) {
-                        closeModal();
-                    }
+                    if (e.target === modalRef.current) closeModal();
                 }}
             >
                 <span id="closeModal" onClick={closeModal}>&times;</span>
-                <img ref={modalImgRef} className="modal-content" alt="Certificate Modal"/>
+
+                <button className="modal-arrow left" onClick={showPrev}>
+                    &#10094;
+                </button>
+
+                <img
+                    ref={modalImgRef}
+                    className="modal-content"
+                    alt="Certificate Modal"
+                />
+
+                <button className="modal-arrow right" onClick={showNext}>
+                    &#10095;
+                </button>
+
+                <p className="image-counter">
+                    {currentIndex + 1} / {currentImages.length}
+                </p>
             </div>
         </div>
     );
