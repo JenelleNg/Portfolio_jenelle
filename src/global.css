@@ -5,6 +5,7 @@ body {
     color: #1B4965;
     margin: 0;
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
 .hero-bg {
