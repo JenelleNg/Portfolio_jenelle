@@ -4,13 +4,14 @@ import "./Portfolio.css";
 
 export default function PortfolioFull() {
     const projects = [
-        {
-            id: "gpa",
-            title: "GPA Tracker",
-            description: "Built with Python, HTML, and JavaScript. Includes module editing, GPA calculations, and dynamic form updates.",
-            image: "/images/GPATracker.png",
-            used: "Python, HTML, JavaScript",
-        },
+        { 
+        id: "inexapp", 
+        title: "Income & Expense Manager", 
+        category: "mobile app", 
+        description: "A simple app to track income and expenses. Adding and editing income or expense and a button that calculates the totals and the surplus/deficit.", 
+        used: "React, JavaScript, CSS",
+        image: "/images/inexapp.png", 
+    },
         {
             id: "vr-escape",
             title: "VR Escape Room",

@@ -1,21 +1,9 @@
 export const projects = [
-    { 
-        id: "gpa", 
-        title: "GPA Tracker", 
-        category: "web app", 
-        description: "I code the module details, where it display the module name, code, assessment, grade and weightage. I also coded the edit and delete part. ", 
-        used: "Python, HTML, JavaScript",
-        images: [
-            "/images/GPATracker.png",
-            "/images/GPAtracker1.png",
-            "/images/GPAtracker2.png"
-        ]
-    },
     {
         id: "vr-escape",
         title: "VR Escape Room",
         category: "vr",
-        description: "Designed the escape room and the puzzles in Unity and using C# to code the puzzles. I find assets in Unity Store to complete my puzzles and environment of my escape room.",
+        description: "Designed an escape room base on greek mythology and created 4 puzzles in Unity, using C# to code the puzzles. I find assets in Unity Store to complete my puzzles and environment of my escape room.",
         used: "Unity, C#",
         images: [
             "/images/escaperoom.png",
@@ -30,12 +18,13 @@ export const projects = [
         id: "vr-bscard", 
         title: "VR Business Card", 
         category: "vr", 
-        description: "Created an interactive VR business card experience.", 
+        description: "Designed and created an interactive VR business card experience.", 
         used: "Unity, C#", 
         images: ["/images/bscard.png",
             "/images/bscard2.png",
             "/images/bsbird.png"
-        ]
+        ],
+        vimeoId: "1161326537"
     },
     { 
         id: "instagrid", 
@@ -50,7 +39,7 @@ export const projects = [
         images: ["/images/amongus.png"], 
         title: "3D Model AmongUs", 
         category: "others", 
-        description: "Modeled and a 3D AmongUs character in Blender.", 
+        description: "Modeled a 3D AmongUs character in Blender.", 
         used: "Blender, Unity" 
     },
     { 
