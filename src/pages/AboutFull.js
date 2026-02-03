@@ -21,11 +21,15 @@ export default function AboutFull() {
             "JavaScript Enhancing the DOM.png",
             "JavaScript Web Form Programming.png",
             "HandsOn Introduction React.png",
-            "Create a Quick Clean and Cheap Website with Bootstrap Templates.png"
+            "Create a Quick Clean and Cheap Website with Bootstrap Templates.png",
+            "Learning React Native.png",
+            "From React to React Native.png"
+
         ],
         backend: [
             "Node.js Essential Training.png",
-            "Programming Foundations APIs and Web Services 2019.png"
+            "Programming Foundations APIs and Web Services 2019.png",
+            "Python Automation and Testing.png"
         ],
         software: [
             "Software Testing Foundations Test Planning.png",
@@ -35,11 +39,15 @@ export default function AboutFull() {
             "ISTQB Foundation Cert Prep.png",
             "Project Management Foundations Requirements.png",
             "Agile Foundation.png",
-            "What Is Scrum.png"
+            "What Is Scrum.png",
+            "Google Analytics 4 (GA4) Essential Training.png"
         ],
         design: [
             "Photoshop 2021 Quick Start.png",
-            "Illustrator 2023 Quick Start.png"
+            "Illustrator 2023 Quick Start.png",
+            "Building Modern UIs with React Router V6.png",
+            "Designing Accessible Components In Figma.png",
+            "UX Foundations Usability Testing.png"
         ]
     };
 
@@ -188,6 +196,16 @@ export default function AboutFull() {
                         key={cat.id}
                         className={`carousels-container ${activeCategory === cat.id ? "active" : ""}`}
                     >
+                        <button
+                            className="carousel-arrow left"
+                            onClick={() => {
+                                const carousel = document.getElementById(`carousel-${cat.id}`);
+                                carousel.scrollBy({ left: -300, behavior: "smooth" });
+                            }}
+                        >
+                            &#10094;
+                        </button>
+
                         <div className="carousels" id={`carousel-${cat.id}`}>
                             {certs[cat.id].map((cert, index) => (
                                 <img
@@ -197,20 +215,28 @@ export default function AboutFull() {
                                     alt={cert}
                                     onClick={() =>
                                         openModal(
-                                            certs[cat.id].map(
-                                                c => `/images/certificates/${c}`
-                                            ),
+                                            certs[cat.id].map(c => `/images/certificates/${c}`),
                                             index
                                         )
                                     }
                                 />
                             ))}
-                        </div>
-                    </div>
-                ))}
+        </div>
+
+        <button
+            className="carousel-arrow right"
+            onClick={() => {
+                const carousel = document.getElementById(`carousel-${cat.id}`);
+                carousel.scrollBy({ left: 300, behavior: "smooth" });
+            }}
+        >
+            &#10095;
+        </button>
+    </div>
+))}
+
             </div>
 
-            {/* Modal */}
             <div
                 ref={modalRef}
                 className="modal"
