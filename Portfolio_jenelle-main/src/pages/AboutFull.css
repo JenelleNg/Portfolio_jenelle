@@ -199,30 +199,36 @@ p {
 }
 
 .modal {
-    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 .modal-content {
-    width: 60%;
-    border-radius: 10px;
     max-width: 90%;
-    max-height: 80vh;
-    object-fit: contain;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
 
 #closeModal {
     position: absolute;
-    top: 25px;
-    right: 40px;
-    font-size: 50px;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
     color: white;
     cursor: pointer;
+    user-select: none;
 }
+
+#closeModal:hover {
+    opacity: 0.8;
+}
+
 
 @media screen and (max-width: 1000px) {
     .top-section {

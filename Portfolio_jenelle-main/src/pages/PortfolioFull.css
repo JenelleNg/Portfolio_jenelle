@@ -47,7 +47,7 @@ h2 { font-size: 30px; }
 }
 
 .project-cards {
-    width: 260px;
+    width: 300px;
     background: rgba(255, 255, 255, 0.5);
     border: 2px solid #1B4965;
     border-radius: 20px;
@@ -60,14 +60,14 @@ h2 { font-size: 30px; }
 
 .project-cards img {
     width: 100%;
-    height: 180px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 
 .project-cards h2 {
-    font-size: 25px;
+    font-size: 22px;
     color: #1B4965;
     margin: 0;
     text-align: center;
