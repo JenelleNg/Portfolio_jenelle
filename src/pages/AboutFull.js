@@ -137,7 +137,7 @@ export default function AboutFull() {
 
             <div className="card goals">
                 <h1 className="section-title">Goals</h1>
-                <p>My goal is to have a life that I am grateful for. :D</p>
+                <p>To live life to the fullest.</p>
             </div>
 
             <div className="card certificates">
