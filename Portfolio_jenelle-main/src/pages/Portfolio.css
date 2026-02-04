@@ -1,0 +1,52 @@
+.section {
+    padding: 40px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 25px;
+    width: 92%;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+}
+
+.project-card img {
+    width: 230px;
+    border-radius: 12px;
+    height: auto;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h2 {
+    margin: 0 0 8px 0;
+}
+
+.project-info p {
+    margin: 6px 0;
+}
+
+.project-info .btn {
+    padding: 10px 15px;
+    background-color: #BEE9E8;
+    color: #1B4965;
+    text-decoration: none;
+    border-radius: 20px;
+    width: fit-content;
+}

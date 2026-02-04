@@ -20,6 +20,7 @@ export default function PortfolioFull() {
             used: "Unity, C#",
         },
     ];
+
     return (
         <div className="section">
             <h1 className="section-title">My Projects</h1>
