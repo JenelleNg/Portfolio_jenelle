@@ -6,6 +6,7 @@ body {
     margin: 0;
     line-height: 1.8;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .hero-bg {
