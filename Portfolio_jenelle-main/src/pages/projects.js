@@ -53,7 +53,8 @@ export const projects = [
             "/images/ssadd.png",
             "/images/ssedit.png",
             "/images/sstotal.png",
-        ]
+        ],
+        vimeoId: "1161657515"
     },
     { 
         id: "calm", 
