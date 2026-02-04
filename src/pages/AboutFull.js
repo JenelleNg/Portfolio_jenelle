@@ -23,7 +23,9 @@ export default function AboutFull() {
             "HandsOn Introduction React.png",
             "Create a Quick Clean and Cheap Website with Bootstrap Templates.png",
             "Learning React Native.png",
-            "From React to React Native.png"
+            "From React to React Native.png",
+            "react(basic) (HR).png", 
+            "javascript(basic) (HR).png"
 
         ],
         backend: [

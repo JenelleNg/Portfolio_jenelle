@@ -1,9 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#d8ecf6, #b6d9f2, #9bc6eb);
+    overscroll-behavior-y: none;
+}
+
 body {
     font-family: "Poppins", "Segoe UI", sans-serif;
-    background: linear-gradient(#d8ecf6, #b6d9f2, #9bc6eb);
     min-height: 100vh;
     color: #1B4965;
-    margin: 0;
     line-height: 1.8;
     overflow-x: hidden;
 }
@@ -83,10 +88,6 @@ body {
     transition: 0.3s;
     font-weight: bold;
 }
-
-/* .btn:hover {
-    background: #a7cece;
-} */
 
 .section-title {
     text-align: left;

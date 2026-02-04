@@ -34,6 +34,11 @@ export default function PortfolioFull() {
                     <div className="card project-cards" key={proj.id}>
                         <img src={proj.images[0]} alt={proj.title} />
                         <h2>{proj.title}</h2>
+
+                        <p className="project-category">
+                            {proj.category.toUpperCase()}
+                        </p>
+
                         <Link to={`/portfolio/${proj.id}`}>
                             <button style={{fontFamily:"time new roman", color: "#1B4965"}}>View</button>
                         </Link>

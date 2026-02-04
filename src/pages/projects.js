@@ -71,7 +71,8 @@ export const projects = [
             "/images/CALMfavourite.png",
             "/images/CALMCART.png",
             "/images/CALMcomponent.png",
-        ]
+        ],
+        vimeoId: "1161693823"
     },
     { 
         id: "pizza", 
@@ -95,5 +96,37 @@ export const projects = [
             "/images/travellist1.png",
             "/images/travellist2.png"
         ]
+    },
+    { 
+        id: "tree app", 
+        title: "Tree Tracking App", 
+        category: "mobile app", 
+        description: "This mobile application is designed to track tree counts across different regions in Singapore. Users can add tree data, and the app automatically calculates environmental severity based on the total number of trees. It connects to a backend web service to store and retrieve data, ensuring information is consistent across sessions and devices. The app helps the community view how many trees have been added to each region and allows users to reset the tree count at the end of each month.", 
+        used: "React, JavaScript, CSS",
+        images: [
+            "/images/treeLoginpage.png",
+            "/images/treeRegister.png",
+            "/images/treeHome.png",
+            "/images/treeAdd.png",
+            "/images/treeEdit.png",
+            "/images/treeDelete.png",
+        ],
+        vimeoId: "1161690147"
+    },
+    { 
+        id: "learningrp", 
+        title: "Learning@RP", 
+        category: "design", 
+        description: "Designed and created UI kit for Learn@RP.", 
+        used: "Figma",
+        link: "https://www.figma.com/proto/gF8HbOox7eBfICL9jkAYPG/Jenelle-24013515-Learn-RP-App?node-id=30-33&p=f&t=45V41k2R8Xlt7YUp-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=30%3A33",
+        linkLabel: "View Figma Design Prototype",
+        images: [
+            "/images/learningrp.png",
+            "/images/learningrpHighfi.png",
+            "/images/learningrpUIkit.png",
+        ],
+
+        vimeoId: "1161697482"
     },
 ];

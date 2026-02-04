@@ -199,3 +199,15 @@ h2 { font-size: 30px; }
 .page-wrapper {
     padding-top: 100px; /* equal to navbar height */
 }
+
+.project-category {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1B4965;
+    background-color: #BEE9E8;
+    padding: 4px 12px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+}
