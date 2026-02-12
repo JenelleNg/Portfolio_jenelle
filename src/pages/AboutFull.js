@@ -110,7 +110,7 @@ export default function AboutFull() {
     return (
         <div className="section about-page">
             <div className="top-section">
-                <img src="/images/penguin.jpg" className="profile-pic" alt="Profile" />
+                <img src="/images/profilepic.png" className="profile-pic" alt="Profile" />
                 <img src="/images/bird2.png" className="bird2" alt="Bird 2" />
 
                 <div className="about-text">
