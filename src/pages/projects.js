@@ -3,7 +3,11 @@ export const projects = [
         id: "vr-escape",
         title: "VR Escape Room",
         category: "vr",
-        description: "Designed an escape room base on greek mythology and created 4 puzzles in Unity, using C# to code the puzzles. I find assets in Unity Store to complete my puzzles and environment of my escape room.",
+        description: [
+            "I designed and developed a Greek mythology–themed escape room using Unity. The environment is inspired by an ancient Greek temple, creating an immersive setting for players. \n",
+            "I created four interactive puzzles and implemented their logic using C#. Each puzzle is connected to elements of Greek culture and storytelling, requiring players to observe clues, interact with objects, and solve challenges to progress. \n",
+            "To enhance the visual quality and atmosphere, I sourced and integrated assets from the Unity Asset Store, customizing them to fit the overall theme and environment design of the escape room."
+        ],
         used: "Unity, C#",
         images: [
             "/images/escaperoom.png",
@@ -12,13 +16,13 @@ export const projects = [
             "/images/erpuzzle2.png",
             "/images/erpuzzle4.png"
         ],
-        vimeoId: "1160968231"
+        vimeoId: "1160968231",
     },
     { 
         id: "vr-bscard", 
         title: "VR Business Card", 
         category: "vr", 
-        description: "Designed and created an interactive VR business card experience.", 
+        description: "Designed and developed an interactive VR business card experience using Unity, creating an immersive way to present personal and project information.", 
         used: "Unity, C#", 
         images: ["/images/bscard.png",
             "/images/bscard2.png",
@@ -31,7 +35,7 @@ export const projects = [
         images: ["/images/instagrid.jpg"],
         title: "Instagram Grid", 
         category: "design", 
-        description: "Each post is carefully designed to form a bigger picture, showcasing our brand's aesthetic and values.", 
+        description: "Designed a cohesive Instagram grid layout where each post contributes to a larger visual composition, reinforcing the brand’s aesthetic and core values. Created the grid using Adobe Photoshop and Illustrator to ensure visual consistency and strong brand identity.", 
         used: "Photoshop, Illustrator" 
     },
     { 
@@ -46,7 +50,7 @@ export const projects = [
         id: "inexapp", 
         title: "Income & Expense Manager", 
         category: "mobile app", 
-        description: "A simple app to track income and expenses. Adding and editing income or expense and a button that calculates the totals and the surplus/deficit.", 
+        description: "Built a financial tracking web application using React, JavaScript, and CSS that enables users to manage income and expenses efficiently. Implemented dynamic state management to update entries in real time and calculate totals, including surplus or deficit, to provide clear financial insights.", 
         used: "React, JavaScript, CSS",
         images: ["/images/inexapp.png", 
             "/images/sshome.png",
@@ -60,7 +64,7 @@ export const projects = [
         id: "calm", 
         title: "CALM Website Design", 
         category: "design", 
-        description: "Design of a shopping website, through Figma, that sells sustainable clothes.", 
+        description: "Designed a sustainable fashion e-commerce website prototype using Figma, focusing on clean layout, eco-friendly branding, and intuitive navigation to enhance user experience.", 
         used: "Figma",
         link: "https://www.figma.com/proto/ZOgObL1vQ3OowBT6fCw0km/Jenelle-24013515-C-LM-wireframe?node-id=1-2&p=f&t=GVNRv8Cs14mo9XeJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
         linkLabel: "View Figma Design Prototype",
